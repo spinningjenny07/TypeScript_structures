@@ -176,10 +176,10 @@ class PriorityQueue {
 
 	getHighestPriorityItem(): PriorityItem {
 		// todo: remove and return the last item on the storage
-		let min: number = -1;
+		let min: number = 0;
 
 		for (let s = 0; s < this.storage.length; s++) {
-			if (this.storage[s].priority < this.storage[s + 1].priority) {
+			if (this.storage[s].priority < this.storage[min].priority) {
 			min = s;
 			}
 		}
@@ -194,7 +194,7 @@ class PriorityQueue {
 		let min: number = 0;
 
 		for (let s = 0; s < this.storage.length; s++) {
-			if (this.storage[s].priority < this.storage[s + 1].priority) {
+			if (this.storage[s].priority < this.storage[min].priority) {
 			min = s;
 			}
 		}

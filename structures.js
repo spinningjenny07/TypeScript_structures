@@ -137,9 +137,9 @@ var PriorityQueue = (function () {
     };
     PriorityQueue.prototype.getHighestPriorityItem = function () {
         // todo: remove and return the last item on the storage
-        var min = -1;
+        var min = 0;
         for (var s = 0; s < this.storage.length; s++) {
-            if (this.storage[s].priority < this.storage[s + 1].priority) {
+            if (this.storage[s].priority < this.storage[min].priority) {
                 min = s;
             }
         }
@@ -150,7 +150,7 @@ var PriorityQueue = (function () {
         // todo: return a reference to the last item in storage without removing
         var min = 0;
         for (var s = 0; s < this.storage.length; s++) {
-            if (this.storage[s].priority < this.storage[s + 1].priority) {
+            if (this.storage[s].priority < this.storage[min].priority) {
                 min = s;
             }
         }
